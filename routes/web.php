@@ -15,16 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/loai-san-pham'], function() {
         Route::get('/index', [LoaiSanPhamController::class, 'index']);
         Route::post('/index', [LoaiSanPhamController::class, 'create']);
         Route::get('/data', [LoaiSanPhamController::class, 'getData']);
-        // Route::post('/delete', [LoaiSanPhamController::class, 'delete']);
-        // Route::post('/update', [LoaiSanPhamController::class, 'update']);
-        // Route::post('/change-status', [LoaiSanPhamController::class, 'status']);
+
     });
 });
